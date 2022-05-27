@@ -18,4 +18,4 @@ main:		;tells linker where to start
 section .data
 msg db 'displaying 9 stars',0xa ; a message
 len equ $ - msg 	;len of msg
-s2 times 9 db '*'
+s2 times 9 db '*' ;initalize s2

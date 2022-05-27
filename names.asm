@@ -8,9 +8,9 @@ main:
 	mov ebx,1 	;file descriptor
 	mov eax,4 	;sys call number (sys_write(
 	int 0x80
-	
+
 	mov [name], dword 'Jack'
-	
+
 ;writing the name Nuha Ali
 
 	mov edx,8
@@ -22,4 +22,4 @@ main:
 	int 0x80
 
 section .data
-name db 'Zara Ali'
+name db 'Zara Ali' ;first name
