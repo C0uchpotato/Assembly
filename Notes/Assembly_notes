@@ -7,18 +7,18 @@ Resources
 	https://gpfault.net/posts/asm-tut-0.txt.html
 	http://www.cs.virginia.edu/~evans/cs216/guides/x86.html
 	https://www.tutorialspoint.com/assembly_programming/index.html
-	
+
 Commands
-	
+
 Vim
 	gx - on vim opens links
 
 NASM
 	Cd to directory with .asm file
-	nasm -f elf [.asm file]	
+	nasm -f elf [.asm file]
 	ld -m elf_i386 -s -o [output file name] [.o file]
 	./[output name]
-	
+
 
 Notes - from /home/jhelmer/Home/Resources/Misc/assembly_tutorial.pdf
 
@@ -36,11 +36,11 @@ Data Sizes
 Chapter 3
 
 Sections and Syntax
-	
+
 	section .data = declares initialized (READ: STATIC) data or constraints, doesn't change at runtime
 
 	section .bss = Declares variables to be changed during runtime
-	
+
 	section .text = contains code
 		global main
 	main:
@@ -58,61 +58,61 @@ Syntax
 	[label] mnemonic [operand]s [;comment] = operations in [] are optional
 
 
-Chapter 5	
+Chapter 5
 
 Processor Registers
 
 	10 x 32bit & 6 x 16bit processor registers in the IA-32 Architecture
-	
+
 	General Register - Broken down into 3 subcats
-		
+
 		Data Register
 
 			4 x 32bit - Arithmetic, logic and other operations- can be used in 3 ways
-		
+
 			As complete 32 bit registers - eax, ebx, ecx, edx
-	
+
 			Lower half can be used as 16 bit registers - ax,bx,cx,dx
-	
+
 			Split 16bit into 2 x 8bit registers - ah,al,bh,bl,ch,cl,dh,dl
 
 			#(Question, why can 32bit not be broken down into 4 x 8bit (ie. eah, eal,ebh,ebl etc))
-	
+
 			AX - Primary Accumulator - used in i/o and most arithmetic instructions
 
-			BX - Base Register - Could be used in indexed addressing 
+			BX - Base Register - Could be used in indexed addressing
 
 			CX - Count Register - As ECX, CX registers store the loop count in iterative operations
-		
+
 			DX - Data Register - Used in i/o, used with AX for multiply and divide ops
 
 
 		Pointer Register
-			
+
 			3 x 32bit - EIP, ESP, EBP,(32bt) or IP,SP,BP (16bt)
 
-			IP (Instruction pointer) - Stores the offset of the next instruction. CS:IP gives the complete address of the current instruction 
-			
+			IP (Instruction pointer) - Stores the offset of the next instruction. CS:IP gives the complete address of the current instruction
+
 			SP (Stack pointer) - Provies the offset value within the program stack. SS:SP given the current position of data or address within the program stack
 
-			BP (Base Pointer) - Helps in referencing the parameter variables passed to a subroutine 
+			BP (Base Pointer) - Helps in referencing the parameter variables passed to a subroutine
 		Index Register
 
-			2 x 32bt - ESI,EDI (32bt) or SI,DI (16bt) 
+			2 x 32bt - ESI,EDI (32bt) or SI,DI (16bt)
 
 			Source Indexing (SI) - used as a source index for str operations
-	
+
 			Destination Index (DI) - Used as destination index for str operations
 
-	
+
 	Control Register
 
 		32bt
-		
+
 		Overflow Flag (OF) - indicates the overflow of a high order bit after operation
 
 		Direction Flag (DF) - determines left or right for moving or comparing str data
-	
+
 		Interrupt Flag (IF) - determines whether the external interrupts are to be ignored
 
 		Trap Flag (TF) - Allows setting the processor to single step mode (used in debug)
@@ -120,15 +120,15 @@ Processor Registers
 		Sign Flag (SF) - Shows negative or positive result to an arithmetic op
 
 		Zero Flag (ZF) - Indicates whether the result of an arithmetic operation is zero or non-zero
-	
+
 		Auxiliary Carry Flag - Specialized
 
-		Parity Flag (PF) - Specialized 
+		Parity Flag (PF) - Specialized
 
-		Carry Flag (CF) - 
+		Carry Flag (CF) -
 
 	Segment Register
-	
+
 		Code Segment- Contains all code
 
 		Data Segment- Contains data, constraints and work areas
@@ -138,9 +138,9 @@ Processor Registers
 Chapter 6
 
 System Calls
-	
+
 	Prerequisites
-	
+
 	Mov sys_call number into the EAX register
 
 		1 - sys_exit - EBX = [int]
@@ -178,9 +178,9 @@ Addressing Modes
 		Uses an address and offset to load the requested value from memory (slower than other options)
 
 	Direct-offset Addressing
-	
-		Uses arithmetic operators to modify an address	
-	
+
+		Uses arithmetic operators to modify an address
+
 	Indirect memory addressing
 
 		Uses segment:offset addressing
@@ -201,7 +201,7 @@ Mov Command
 Type Specifier
 
 	byte - 1 byte
-	
+
 	word - 2 bytes
 
 	dword - 4 bytes
@@ -214,7 +214,7 @@ Chapter 8 - Storage and reserving bytes
 
 Directives
 	DB - Define byte - allocates 1 byte
-	
+
 	DW - Define word - allocates 2 bytes
 
 	DD - define doubleword - allocates 4 bytes
@@ -225,8 +225,8 @@ Directives
 
 
 Allocating space for initialized data
-	
-	[variable name] directive inital-value 
+
+	[variable name] directive inital-value
 
 		Each byte is stored in ASCII
 
@@ -251,3 +251,27 @@ Allocating space for uninitialized data
 	REST - Reserve 10 bytes
 
 
+    Chapter 9
+
+Constants
+
+        EQU
+
+                Constant_name EQU expression
+
+                EX.
+                total_students equ 50   ;makes total students == 50
+
+        %assign
+
+                %assign TOTAL 10
+
+                later can change to (redefinable)
+
+                %assign TOTAL 20
+
+        %define
+
+                %define PTR [EBP+4]
+                (replaces PTR with EBP + 4)
+                (redefinable)

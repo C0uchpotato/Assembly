@@ -1,0 +1,32 @@
+STDIN equ 0
+STDOUT equ 1
+section .text
+    global main
+main:
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, msg1
+    mov edx, len1
+    int 0x80
+
+    mov eax, 4
+    mov ebx, 1
+    mov ecx,msg2
+    mov edx, len2
+    int 0x80
+
+    mov eax,4
+    mov ebx,1
+    mov ecx,msg3
+    mov edx, len3
+    int 0x80
+    mov eax, 1
+    int 0x80
+
+section .Data
+msg1 db 'Hello Programmers!',0xA,0xD
+len1 equ $ - msg1
+msg2 db 'Welcome to the world of,',
+len2 equ $ - msg2
+msg3 db 'Linux assembly programming!'
+len3 equ $ - msg3
