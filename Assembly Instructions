@@ -1,6 +1,0 @@
-NASM
-	Cd to directory with .asm file
-	nasm -f elf [.asm file]	
-	ld -m elf_i386 -s -o [output file name] [.o file]
-	./[output name]
-	
