@@ -250,8 +250,7 @@ Allocating space for uninitialized data
 
 	REST - Reserve 10 bytes
 
-
-    Chapter 9
+Chapter 9
 
 Constants
 
@@ -275,3 +274,13 @@ Constants
                 %define PTR [EBP+4]
                 (replaces PTR with EBP + 4)
                 (redefinable)
+
+Chapter 10
+
+Arithmetic instructions
+
+        INC - Increments an operand 1 by 1
+
+        DEC - Decrements an operand 1 by 1
+
+        ADD/SUB destination, source
