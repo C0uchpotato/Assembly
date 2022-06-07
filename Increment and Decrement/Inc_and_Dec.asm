@@ -60,7 +60,7 @@ main:
         add eax, EBX
         add eax, 0
 
-        mov res, EAX
+        mov [res], eax
 
         mov eax, 4
         mov ebx, 1
