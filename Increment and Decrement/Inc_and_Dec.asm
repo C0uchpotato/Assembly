@@ -50,9 +50,9 @@ main:
 
         ;moving the first number to the eax register and the second number to the EBX
         ;and subtracting asciii '0' to convert it into a decimal numbers
-        mov eax, num1
+        mov eax,
         sub eax, '0'
-        mov ebx, num2
+        mov ebx,
         sub ebx, '0'
 
         ;add ebx and EAX
