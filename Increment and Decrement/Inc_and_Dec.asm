@@ -16,8 +16,8 @@ num2 resb 2
 res resb 1
 
 section .text
-        global main
-main:
+        global main     ;must be declared for linker
+main:           ;tell linker entry point
         mov eax, 4
         mov ebx, 1
         mov ecx, msg1
