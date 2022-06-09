@@ -60,11 +60,11 @@ main:           ;tell linker entry point
         add eax, ebx
         add eax, 0
 
-        mov [res], eax
+        mov edx, eax
 
         mov eax, 4
         mov ebx, 1
-        mov ecx, [res]
+        mov ecx, edx
         mov edx, 1
         int 0x80
 exit:
