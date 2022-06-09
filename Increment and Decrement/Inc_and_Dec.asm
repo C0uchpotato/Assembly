@@ -30,7 +30,7 @@ main:           ;tell linker entry point
         mov edx, 2
         int 0x80
 
-        mov eax, 3
+        mov eax, 4
         mov ebx, 1
         mov ecx, msg2
         mov edx, len2
@@ -42,7 +42,7 @@ main:           ;tell linker entry point
         mov edx, 2
         int 0x80
 
-        mov eax, 3
+        mov eax, 4
         mov ebx, 1
         mov ecx, msg3
         mov edx, len3
@@ -57,17 +57,17 @@ main:           ;tell linker entry point
 
         ;add ebx and EAX
 
-        add eax, EBX
+        add eax, ebx
         add eax, 0
 
         mov [res], eax
 
         mov eax, 4
         mov ebx, 1
-        mov ecx, res
-        mov edx,1
+        mov ecx, [res]
+        mov edx, 1
         int 0x80
 exit:
-        mov eax,1
+        mov eax, 1
         xor ebx, ebx
         int 0x80
