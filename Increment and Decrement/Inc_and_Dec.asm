@@ -11,9 +11,9 @@ segment .Data
 
 segment .bss
 
-num1 resb 2
-num2 resb 2
-res resb 1
+        num1 resb 2
+        res resb 1
+        num2 resb 2
 
 section .text
         global main     ;must be declared for linker
@@ -50,9 +50,9 @@ main:           ;tell linker entry point
 
         ;moving the first number to the eax register and the second number to the EBX
         ;and subtracting asciii '0' to convert it into a decimal numbers
-        mov eax,
+        mov eax, num1
         sub eax, '0'
-        mov ebx,
+        mov ebx, num2
         sub ebx, '0'
 
         ;add ebx and EAX
