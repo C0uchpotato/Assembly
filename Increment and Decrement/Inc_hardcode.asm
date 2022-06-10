@@ -18,7 +18,8 @@ main:
         mov eax, 4      ;sys_write
         int 0x80
         mov eax, 1      ;sys_exit
-
+        int 0x80
+        
 section .data   
         msg db "The sum is: "
         len equ $ - msg
