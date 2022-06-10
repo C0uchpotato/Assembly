@@ -23,7 +23,7 @@ segment .bss
         res resb 1
 
 section .text
-        global main     ;must be declared for linker
+        global main   ;must be declared for linker
 main:           ;tell linker entry point
         mov eax, SYS_WRITE
         mov ebx, STDOUT
@@ -55,7 +55,7 @@ main:           ;tell linker entry point
         mov edx, len3
         int 0x80
 
-        ;moving the first number to the eax register and the second number to the EBX
+        ;moving the first number to the eax register and the second number to the ebx
         ;and subtracting asciii '0' to convert it into a decimal numbers
         mov eax, num1
         sub eax, '0'
