@@ -6,6 +6,7 @@ main:
         mov ebx, '4'
         sub ebx, '0'
         add eax, ebx
+        add eax, '0'
         mov [sum], eax
         mov ecx, msg
         mov edx, len
@@ -19,7 +20,7 @@ main:
         int 0x80
         mov eax, 1      ;sys_exit
         int 0x80
-        
+
 section .data   
         msg db "The sum is: "
         len equ $ - msg
