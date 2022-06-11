@@ -5,7 +5,7 @@ main:
         sub al, '0'
         mov bl, '2'
         sub bl, '0'
-        mul bl
+        mul al
         add al, '0'
         mov [res], al
         mov ecx, msg
@@ -23,7 +23,7 @@ main:
         int 0x80
 
 section .data
-msg db "The result is: ", 0xA, 0xD
+msg db "The result is: "
 len equ $- msg
 
 segment .bss
